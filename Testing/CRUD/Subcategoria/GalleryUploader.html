@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script type='text/javascript'>
+
+function preview_image(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('output_image');
+  output.src = reader.result;
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+</script>
+<style>
+body
+{
+ width:100%;
+ margin:0 auto;
+ padding:0px;
+ font-family:helvetica;
+ background-color:rgb(120, 200, 224);
+}
+#wrapper
+{
+ text-align:center;
+ margin:0 auto;
+ padding:0px;
+ width:995px;
+}
+#output_image
+{
+ max-width:300px;
+}
+
+h1 { font-family: "Bookman Old Style"; color:azure;font-size: 30px; font-style: italic; font-variant: normal; font-weight: 700; line-height: 30px; } h3 { font-family: "Bookman Old Style"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: "Bookman Old Style"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: "Bookman Old Style"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: "Bookman Old Style"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+h3 { font-family: "Bookman Old Style"; color:azure;    font-size: 24px; font-style: italic; font-variant: normal; font-weight: 400; line-height: 24px; } h3 { font-family: "Bookman Old Style"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } 
+</style>
+</head>
+<body>
+<div id="wrapper">
+    <div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1> Seleccione la imagen que desea subir</h1>
+        <h3> Formatos : JPG. PNG. .SVG</h3>
+    </div>
+ <input type="file" accept="image/*" onchange="preview_image(event)" class="btn btn-success">
+ <button type="button" class="btn btn-success">Subir</button>
+ <img id="output_image"/>
+</div>
+</body>
+</html>
